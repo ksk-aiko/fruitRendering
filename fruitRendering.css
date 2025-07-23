@@ -1,0 +1,13 @@
+.fruitImg {
+    width: 100px;
+    height: 100px;
+    padding: 1em;
+}
+
+.fruitDiv{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 25%;
+    margin-top:2em;
+}
