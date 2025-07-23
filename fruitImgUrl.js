@@ -1,26 +1,8 @@
-// 何のフルーツかの文字列を受け取って、URLを返す関数
-
-// if文を使うパターン
-// function fruitImgUrl(fruit) {
-//     let fruit_lowercase = fruit.toLowerCase();
-
-//     switch(fruit_lowercase) {
-//         case "banana":
-//             return "https://www.kroger.com/product/images/xlarge/front/0000000004011";
-//             break;
-//         case "pineapple":
-//             return "https://www.plantgrower.org/uploads/6/5/5/4/65545169/published/pineapple.jpg?1516498929";
-//             break;
-//         case "pear":
-//             return "https://www.producemarketguide.com/sites/default/files/Commodities.tar/Commodities/pears_commodity-page.png";
-//             break;
-//         default:
-//             return "https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg";
-//             break;
-//     }
-// }
-
-// ハッシュテーブルを使うパターン
+/**
+ * Get the image URL for a specific fruit.
+ * @param {string} fruit - The name of the fruit.
+ * @returns {string} - The image URL of the fruit.
+ */
 function fruitImgUrl(fruit) {
     const fruitTable = {
         "banana": "https://www.kroger.com/product/images/xlarge/front/0000000004011",
@@ -29,7 +11,8 @@ function fruitImgUrl(fruit) {
     }
     const defaultUrl = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg";
 
-    return fruitTable[fruit] !== undefined ? fruitTable[fruit] : defaultUrl;
+    // Get the URL from the fruitTable or return the default URL if not found
+    return fruitTable[fruit] || defaultUrl;
 }
 
 // 入力されたfruitを要素に挿入する関数
