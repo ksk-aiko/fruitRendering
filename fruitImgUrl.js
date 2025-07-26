@@ -13,15 +13,23 @@ function fruitImgUrl(fruit) {
   return FRUIT_URL_TABLE[fruit] || DEFAULT_FRUIT_URL;
 }
 
-// function to insert the input fruit into the element
-function renderFruit(fruit, ele) {
+function createFruitParagraph(fruit) {
   const fruitP = document.createElement("p");
   fruitP.innerHTML = `Our fruit is ${fruit}`;
+  return fruitP;
+}
 
+function createFruitImage(fruit) {
   const fruitImg = document.createElement("img");
   fruitImg.src = fruitImgUrl(fruit);
-
   fruitImg.classList.add("fruitImg");
+  return fruitImg;
+}
+
+// function to insert the input fruit into the element
+function renderFruit(fruit, ele) {
+  const fruitP = createFruitParagraph(fruit);
+  const fruitImg = createFruitImage(fruit);
 
   const fruitDiv = document.createElement("div");
   fruitDiv.classList.add("fruitDiv");
