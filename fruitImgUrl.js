@@ -13,28 +13,27 @@ function fruitImgUrl(fruit) {
   return FRUIT_URL_TABLE[fruit] || DEFAULT_FRUIT_URL;
 }
 
-// 入力されたfruitを要素に挿入する関数
+// function to insert the input fruit into the element
 function renderFruit(fruit, ele) {
-  // 要素の作成
-  let fruitP = document.createElement("p");
-  fruitP.innerHTML = "Our fruit is : " + fruit;
-  // img要素の作成
-  let fruitImg = document.createElement("img");
-  // imgタグへsrc属性の追加
-  fruitImg.src = fruitImgUrl(fruit);
-  // imgタグへclass属性の追加
-  fruitImg.classList.add("fruitImg");
-  // div要素に入れる
-  let fruitDiv = document.createElement("div");
-  fruitDiv.classList.add("fruitDiv");
-  fruitDiv.append(fruitP);
-  fruitDiv.append(fruitImg);
-  // コンテナの中に入れる
-  ele.append(fruitDiv);
+
+    const fruitP = document.createElement("p");
+    fruitP.innerHTML = "Our fruit is : " + fruit;
+
+    const fruitImg = document.createElement("img");
+    fruitImg.src = fruitImgUrl(fruit);
+
+    fruitImg.classList.add("fruitImg");
+
+    const fruitDiv = document.createElement("div");
+    fruitDiv.classList.add("fruitDiv");
+    fruitDiv.append(fruitP);
+    fruitDiv.append(fruitImg);
+
+    ele.append(fruitDiv);
 }
 
 // 実行プログラム
-let fruitContainer = document.getElementById("fruit-container");
+const fruitContainer = document.getElementById("fruit-container");
 renderFruit("banana", fruitContainer);
 renderFruit("pear", fruitContainer);
 renderFruit("pineapple", fruitContainer);
