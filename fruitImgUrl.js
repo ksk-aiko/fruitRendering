@@ -15,27 +15,26 @@ function fruitImgUrl(fruit) {
 
 // function to insert the input fruit into the element
 function renderFruit(fruit, ele) {
+  const fruitP = document.createElement("p");
+  fruitP.innerHTML = `Our fruit is ${fruit}`;
 
-    const fruitP = document.createElement("p");
-    fruitP.innerHTML = `Our fruit is ${fruit}`;
+  const fruitImg = document.createElement("img");
+  fruitImg.src = fruitImgUrl(fruit);
 
-    const fruitImg = document.createElement("img");
-    fruitImg.src = fruitImgUrl(fruit);
+  fruitImg.classList.add("fruitImg");
 
-    fruitImg.classList.add("fruitImg");
+  const fruitDiv = document.createElement("div");
+  fruitDiv.classList.add("fruitDiv");
+  fruitDiv.append(fruitP);
+  fruitDiv.append(fruitImg);
 
-    const fruitDiv = document.createElement("div");
-    fruitDiv.classList.add("fruitDiv");
-    fruitDiv.append(fruitP);
-    fruitDiv.append(fruitImg);
-
-    ele.append(fruitDiv);
+  ele.append(fruitDiv);
 }
 
-// 実行プログラム
+// Execution program
 const fruitContainer = document.getElementById("fruit-container");
-renderFruit("banana", fruitContainer);
-renderFruit("pear", fruitContainer);
-renderFruit("pineapple", fruitContainer);
-renderFruit("coconut", fruitContainer);
-renderFruit("grape", fruitContainer);
+const fruitsToRender = ["banana", "pear", "pineapple", "coconut", "grape"];
+
+fruitsToRender.forEach((fruit) => {
+  renderFruit(fruit, fruitContainer);
+});
