@@ -17,7 +17,7 @@ function fruitImgUrl(fruit) {
 function renderFruit(fruit, ele) {
 
     const fruitP = document.createElement("p");
-    fruitP.innerHTML = "Our fruit is : " + fruit;
+    fruitP.innerHTML = `Our fruit is ${fruit}`;
 
     const fruitImg = document.createElement("img");
     fruitImg.src = fruitImgUrl(fruit);
