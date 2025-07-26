@@ -33,8 +33,13 @@ function renderFruit(fruit, ele) {
 
 // Execution program
 const fruitContainer = document.getElementById("fruit-container");
-const fruitsToRender = ["banana", "pear", "pineapple", "coconut", "grape"];
 
-fruitsToRender.forEach((fruit) => {
-  renderFruit(fruit, fruitContainer);
-});
+if (!fruitContainer) {
+  console.error("Could not find the fruit container element.");
+} else {
+  const fruitsToRender = ["banana", "pear", "pineapple", "coconut", "grape"];
+
+  fruitsToRender.forEach((fruit) => {
+    renderFruit(fruit, fruitContainer);
+  });
+}
